@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    build: ./requirements/nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - wordpress:/var/www/html
+    restart: always
+    networks:
+      - network
+
+networks:
+  network:
+    driver: bridge
