@@ -4,7 +4,14 @@ FROM alpine:3.15
 RUN	apk update && \
 	apk upgrade && \ 
 	apk add nginx && \
-	mkdir -p /run/nginx	
-COPY	conf/nginx.conf /etc/nginx/conf.d/default.conf
+	adduser -D -g 'www' www && \
+	mkdir -p /www && \
+	chown -R www:www /var/lib/nginx && \
+	chown -R www:www /www
+
+COPY	conf/nginx.conf /etc/nginx/http.d/nginx.conf
+COPY	index.html /www
+EXPOSE 80/tcp
+
 
 CMD	["nginx", "-g", "daemon off;"]
