@@ -9,7 +9,7 @@ RUN apk update && \
 RUN	apk add curl 
 RUN apk add php-fpm 
 RUN apk add mariadb-client
-RUN apk add php php-opcache
+RUN apk add php php-opcache php-phar
 
 
 # copy config files

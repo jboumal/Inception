@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     restart : always
     volumes:
-      - /home/bperraud/data/wordpress:/var/www/html
+      - /home/jboumal/data/wordpress:/var/www/html
     ports:
       - "443:443"
     networks:
@@ -25,7 +25,7 @@ services:
     restart : always
     working_dir: /var/www/html
     volumes:
-      - /home/bperraud/data/wordpress:/var/www/html
+      - /home/jboumal/data/wordpress:/var/www/html
     ports:
       - "9000:9000"
     networks:
@@ -41,7 +41,7 @@ services:
     restart : always
     working_dir: /var/lib/mysql
     volumes:
-      - /home/bperraud/data/mariadb:/var/lib/mysql
+      - /home/jboumal/data/mariadb:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
